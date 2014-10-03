@@ -2,17 +2,19 @@ Meteor.startup(function(){
   profiles = [
     {
       name: 'Stephan',
-      profileText: 'I am really good with words and like playing around with new gadgets!'
+      profileText: 'I am really good with words and like playing around with new gadgets!',
+      profileImg: 'https://pbs.twimg.com/profile_images/507098399800172544/2htlTpYi_400x400.jpeg'
     },
     {
       name: 'Manuel',
-      profileText: 'Good food makes me happy and cooking it myself even more.'
+      profileText: 'Good food makes me happy and cooking it myself even more.',
+      profileImg: 'https://pbs.twimg.com/profile_images/378800000123289551/1f63258a55d204a327ac2b5a1bf1d673_400x400.jpeg'
     }
   ]
 
   _.forEach(profiles, function(profile){
     // Updates the profile and inserts it if it does not exist
-    ProfilesCollection.upsert(profile, profile);
+    ProfilesCollection.upsert({name: profile.name}, profile);
   });
 
 });
