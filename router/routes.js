@@ -4,4 +4,4 @@ Router.route('/', function(){
 
 Router.route('/about', function(){
   this.render('about');
-})
+});
