@@ -8,5 +8,12 @@ Router.route('/about', function(){
 
 Router.route('/profiles/manuel', function(){
   this.layout('profileLayout');
+
+  /*
+  Example for rendering a template to a
+  named yield with JavaScript
+  */
+  // this.render('profileImage', {to: 'left'});
+
   this.render('profileDetail');
 });
