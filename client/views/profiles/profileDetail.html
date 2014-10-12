@@ -1,7 +1,21 @@
 <template name="profileDetail">
   <div class="well">
-    <h1>{{name}}</h1>
+    <h1>
+      {{name}}
+      {{#each stars}}
+        <span class="glyphicon glyphicon-star"></span>
+      {{/each}}
+    </h1>
     <p>{{profileText}}</p>
+  </div>
+  <div>
+    <form id="new-compliment" class="form">
+      <div class="form-group">
+        <label>Your Compliment</label>
+        <textarea class="form-control" name="compliment"></textarea>
+        <button class="btn btn-default" type="submit">Submit</button>
+      </div>
+    </form>
   </div>
 </template>
 
