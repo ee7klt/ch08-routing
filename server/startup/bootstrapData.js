@@ -3,7 +3,7 @@ Meteor.startup(function(){
     {
       name: 'Stephan',
       profileText: 'I am really good with words and like playing around with new gadgets!',
-      profileImg: 'https://pbs.twimg.com/profile_images/507098399800172544/2htlTpYi_400x400.jpeg'
+      profileImg: 'https://pbs.twimg.com/profile_images/519901371340828672/szqBnZr3_400x400.jpeg'
     },
     {
       name: 'Manuel',

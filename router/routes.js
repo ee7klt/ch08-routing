@@ -1,7 +1,3 @@
-Router.configure({
-  layoutTemplate: 'masterLayout'
-});
-
 Router.route('/', {
   waitOn: function(){
     return Meteor.subscribe('profiles');
