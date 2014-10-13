@@ -4,6 +4,9 @@ ProfileController = RouteController.extend({
   yieldTemplates: {
     'profileDetailLeft': {to: 'left'}
   },
+  onRun: function(){
+    ProfilesCollection.update({_id: this.params._id}, {$inc: {views: 1}})
+  },
   waitOn: function(){
     return [
       Meteor.subscribe('profile', this.params._id),
@@ -12,14 +15,11 @@ ProfileController = RouteController.extend({
   },
   data: function(){
     var self = this;
-    console.log('DATA');
     var data = {
       profile: function(){
-        console.log('PROFILE');
         return ProfilesCollection.findOne({_id: self.params._id});
       },
       compliments: function(){
-        console.log('COMPLIMENTS');
         return ComplimentsCollection.find({userId: self.params._id});
       }
     };
