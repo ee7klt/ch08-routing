@@ -1,27 +1,33 @@
 <template name="profileDetail">
   <div class="well">
+    {{log}}
     <h1>
       {{profile.name}}
       {{#each stars}}
         <span class="glyphicon glyphicon-star"></span>
       {{/each}}
     </h1>
-    <p>{{profile.profileText}}</p>
+    <p>{{profile.text}}</p>
   </div>
+
 
   {{#each compliments}}
     <div class="well">
       {{text}}
+      {{#if ownProfile}}
+        <button class="btn btn-danger delete-compliment">Delete</button>
+      {{/if}}
     </div>
   {{/each}}
-
   <form id="new-compliment" class="form">
     <div class="form-group">
       <label>Your Compliment</label>
-      <textarea class="form-control" name="compliment"></textarea>
+      <textarea class="form-control" name="text"></textarea>
       <button class="btn btn-default" type="submit">Submit</button>
     </div>
   </form>
+
+
 
 </template>
 

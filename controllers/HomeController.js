@@ -1,9 +1,9 @@
 HomeController = RouteController.extend({
   waitOn: function(){
-    return Meteor.subscribe('profiles');
+    return Meteor.subscribe('users');
   },
-  template: 'home',
   data: function(){
-    return {profiles: ProfilesCollection.find()};
+    return {users: Meteor.users.find({})};
   }
+
 });

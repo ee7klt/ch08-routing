@@ -22,8 +22,18 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li>{{#linkTo route='about'}}About{{/linkTo}}</li>
-          <!--<li><a href="{{pathFor 'about'}}">About</a></li>-->
+          <li class="{{#if isActiveRoute 'about'}}active{{/if}}">
+            {{#linkTo route='about'}}About{{/linkTo}}
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          {{#if currentUser}}
+            <li class="{{#if isActiveRoute 'settings'}}active{{/if}}">
+              {{#linkTo route='settings'}}Settings{{/linkTo}}
+            </li>
+          {{/if}}
+          <li>{{> loginButtons}}</li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

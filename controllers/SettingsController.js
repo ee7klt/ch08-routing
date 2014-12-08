@@ -1,0 +1,3 @@
+SettingsController = RouteController.extend({
+
+});

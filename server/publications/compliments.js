@@ -6,7 +6,7 @@ Meteor.publish('complimentsByUserId', function(_id){
     Meteor.setTimeout(function(){
       cb(null, ComplimentsCollection.find({userId: _id}));
     }, 1000);
-  })();
+  })() || [];
 
   return profiles;
 });

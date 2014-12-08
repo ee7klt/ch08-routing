@@ -1,6 +1,6 @@
 Router.plugin('bouncer', {
   condition: function(){
-    var profile = this.data().profile();
+    var profile = this.data().user;
     if(!profile) return true;
     return profile.isPublic;
   },
@@ -11,19 +11,16 @@ Router.plugin('bouncer', {
 Router.route('/', { name: 'home' });
 Router.route('/about', 'about', { name: 'about' });
 Router.route('/profiles/:_id', { name: 'profile' });
+Router.route('/settings', {name: 'settings'});
+
 
 // SERVER ROUTES
-
-// Middlewares
-// parses body data to json automatically
-Router.use(Router.bodyParser.json());
-
 Router.route('/server/say', function(){
   var request = this.request;
   var response = this.response;
 
   response.end('You said: ' + request.query.message);
-}, {where: 'server'})
+}, {where: 'server'});
 
 // EXTERNAL SERVICES
 Router.route('/webhooks/instagram', {where: 'server'})
@@ -36,4 +33,4 @@ Router.route('/webhooks/instagram', {where: 'server'})
   })
   .put(function(){
     // HTTP PUT on the route /webhooks/instagram
-  })
+  });
