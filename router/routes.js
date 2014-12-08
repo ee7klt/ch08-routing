@@ -1,7 +1,9 @@
 Router.plugin('bouncer', {
   condition: function(){
-    var profile = this.data().user;
+    console.log('bouncer', this.data());
+    var profile = this.data().profile;
     if(!profile) return true;
+    console.log('isPublic?', profile.isPublic);
     return profile.isPublic;
   },
   bouncerTemplate: 'profileIsPrivate',
