@@ -11,7 +11,8 @@ ProfileController = RouteController.extend({
   waitOn: function(){
     return [
       Meteor.subscribe('user', this.params._id),
-      Meteor.subscribe('complimentsByUserId', this.params._id)
+      Meteor.subscribe('complimentsByUserId', this.params._id),
+      IRLibLoader.load('/Chart.min.js')
     ]
   },
   data: function(){
