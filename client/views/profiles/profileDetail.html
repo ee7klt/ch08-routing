@@ -1,23 +1,21 @@
 <template name="profileDetail">
   <div class="well">
     <h1>
-      {{profile.name}}
-      {{#each stars}}
-        <span class="glyphicon glyphicon-star"></span>
+      {{profile.name}} {{#each stars}}
+      <span class="glyphicon glyphicon-star"></span>
       {{/each}}
     </h1>
     <p>{{profile.text}}</p>
-    <canvas id="chart" width="200" height="200"></canvas>
+
   </div>
 
 
   {{#each compliments}}
-    <div class="well">
-      {{text}}
-      {{#if ownProfile}}
-        <button class="btn btn-danger delete-compliment">Delete</button>
-      {{/if}}
-    </div>
+  <div class="well">
+    {{text}} {{#if ownProfile}}
+    <button class="btn btn-danger delete-compliment">Delete</button>
+    {{/if}}
+  </div>
   {{/each}}
   <form id="new-compliment" class="form">
     <div class="form-group">

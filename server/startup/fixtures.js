@@ -8,7 +8,7 @@ Meteor.startup(function() {
     profile: {
       name: 'Stephan',
       text: 'I am really good with words and like playing around with new gadgets!',
-      img: 'stephan.jpg',
+      img: '/stephan.jpg',
       views: 10,
       isPublic: true
     },
@@ -18,7 +18,7 @@ Meteor.startup(function() {
     profile: {
       name: 'Manuel',
       text: 'Good food makes me happy and cooking it myself even more.',
-      img: 'manuel.jpg',
+      img: '/manuel.jpg',
       views: 153,
       isPublic: false
     },

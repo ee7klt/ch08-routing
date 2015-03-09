@@ -5,9 +5,9 @@
 
 meteor-platform
 insecure
-mrt:bootstrap-3
 iron:router@1.0.0-pre3
 accounts-password
 accounts-ui
 manuelschoebel:wait-on-lib
 
+twbs:bootstrap
