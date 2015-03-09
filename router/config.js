@@ -1,4 +1,10 @@
 Router.configure({
-  layoutTemplate: 'masterLayout',
-  loadingTemplate: 'loading'
+  layoutTemplate: 'masterLayout'
+});
+
+
+
+Router.plugin('membersOnly', {
+  membersOnlyTpl: 'membersonly',
+  only: ['profile']
 });

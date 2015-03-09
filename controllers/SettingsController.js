@@ -1,3 +1,0 @@
-SettingsController = RouteController.extend({
-
-});
